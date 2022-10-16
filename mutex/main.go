@@ -29,15 +29,15 @@ func printGo(wg *sync.WaitGroup, mu *sync.Mutex, value int) {
 
 func main() {
 	fmt.Println("START")
-	var AAAAAAAAAAAAAA sync.WaitGroup
+	var wg sync.WaitGroup
 	var mu sync.Mutex
 
 	for i := 0; i < 7; i++ {
-		AAAAAAAAAAAAAA.Add(1)
-		go printGo(&AAAAAAAAAAAAAA, &mu, 10*i)
+		wg.Add(1)
+		go printGo(&wg, &mu, 10*i)
 	}
 
-	AAAAAAAAAAAAAA.Wait()
+	wg.Wait()
 	fmt.Println("FINISH")
 
 }
