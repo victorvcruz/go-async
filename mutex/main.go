@@ -10,6 +10,7 @@ var amount int
 var count int
 
 func printGo(wg *sync.WaitGroup, mu *sync.Mutex, value int) {
+	//aaa
 	mu.Lock()
 	defer func() {
 		count++
