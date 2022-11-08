@@ -20,8 +20,8 @@ func main() {
 
 	go func() {
 		in <- 1
-		in <- 2
 		in <- 3
+		in <- 2
 	}()
 
 	fmt.Printf("Is pair? %t\n", <-pair)
@@ -31,7 +31,6 @@ func main() {
 	fmt.Println(<-out)
 	fmt.Println(<-out)
 	fmt.Println(<-out)
-
 }
 
 func multiplyByThree(in <-chan int, out chan<- int, outPair chan<- int) {
